@@ -13,33 +13,32 @@
       <h2>将图片拖回到方框中</h2>
       <img id="item" src="./love1.jpg" />
     </div>
-    </div>
   </body>
 </html>
 
 <script>
   let item = document.getElementById("item");
   let storage = document.getElementById("storage");
-    let oldBox = document.getElementById("oldBox")
+  let oldBox = document.getElementById("oldBox");
 
   //托进
   item.addEventListener("dragstart", (ev) => {
     ev.dataTransfer.setData("text", ev.target.id);
   });
 
-  storage.addEventListener("drop", (ev) => {
-    const imgId = ev.dataTransfer.getData("text");
-    const img = document.getElementById(imgId);
-    ev.currentTarget.appendChild(img);
-    ev.dataTransfer.clearData();
-  });
-
   storage.addEventListener("dragover", (ev) => {
     ev.preventDefault();
   });
 
+  storage.addEventListener("drop", (ev) => {
+    const imgId = ev.dataTransfer.getData("text");
+    const img = document.getElementById(imgId);
+    ev.currentTarget.appendChild(img);
+  });
+
   //拖回
-  storage.addEventListener("dragstart", () => {
+  storage.addEventListener("dragstart", (ev) => {
+    ev.dataTransfer.clearData();
     ev.dataTransfer.setData("text", ev.target.id);
   });
 

@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>图片显示实现旋转木马效果</title>
+  </head>
+  <body>
+    <div class="img-box">
+      <img src="https://liuzihao.online:8080/api/img/1.jpg" />
+      <img src="https://liuzihao.online:8080/api/img/2.jpg" />
+      <img src="https://liuzihao.online:8080/api/img/3.jpg" />
+      <img src="https://liuzihao.online:8080/api/img/4.jpg" />
+      <img src="https://liuzihao.online:8080/api/img/5.jpg" />
+      <img src="https://liuzihao.online:8080/api/img/6.jpg" />
+    </div>
+  </body>
+</html>
+
+<style>
+  body {
+    display: flex;
+    justify-content: center;
+    background: #000000;
+    perspective: 1000px;
+  }
+
+  @keyframes action {
+    from {
+      transform: rotateY(0);
+    }
+    to {
+      transform: rotateY(360deg);
+    }
+  }
+  .img-box {
+    margin-top: 200px;
+    height: 300px;
+    width: 300px;
+    position: relative;
+    transform-style: preserve-3d;
+    animation: action 20s ease-in-out infinite;
+  }
+  .img-box:hover {
+    animation-play-state: paused;
+  }
+  .img-box img {
+    max-width: 100%;
+    max-height: 100%;
+    position: absolute;
+    -webkit-box-reflect: below 15px -webkit-linear-gradient(transparent 10%, rgba(40, 160, 184, 0.639));
+  }
+  .img-box :nth-child(1) {
+    transform: translateZ(350px);
+  }
+  .img-box :nth-child(2) {
+    transform: rotateY(60deg) translateZ(350px);
+  }
+  .img-box :nth-child(3) {
+    transform: rotateY(120deg) translateZ(350px);
+  }
+  .img-box :nth-child(4) {
+    transform: rotateY(180deg) translateZ(350px);
+  }
+  .img-box :nth-child(5) {
+    transform: rotateY(240deg) translateZ(350px);
+  }
+  .img-box :nth-child(6) {
+    transform: rotateY(300deg) translateZ(350px);
+  }
+</style>

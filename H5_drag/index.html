@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>h5实现拖拽功能</title>
+  </head>
+  <body>
+    <div id="storage">
+      <h2>将图片拖到方框中</h2>
+    </div>
+
+    <div id="oldBox">
+      <h2>将图片拖回到方框中</h2>
+      <img id="item" src="./love1.jpg" />
+    </div>
+    </div>
+  </body>
+</html>
+
+<script>
+  let item = document.getElementById("item");
+  let storage = document.getElementById("storage");
+    let oldBox = document.getElementById("oldBox")
+
+  //托进
+  item.addEventListener("dragstart", (ev) => {
+    ev.dataTransfer.setData("text", ev.target.id);
+  });
+
+  storage.addEventListener("drop", (ev) => {
+    const imgId = ev.dataTransfer.getData("text");
+    const img = document.getElementById(imgId);
+    ev.currentTarget.appendChild(img);
+    ev.dataTransfer.clearData();
+  });
+
+  storage.addEventListener("dragover", (ev) => {
+    ev.preventDefault();
+  });
+
+  //拖回
+  storage.addEventListener("dragstart", () => {
+    ev.dataTransfer.setData("text", ev.target.id);
+  });
+
+  oldBox.addEventListener("drop", (ev) => {
+    const imgId = ev.dataTransfer.getData("text");
+    const img = document.getElementById(imgId);
+    oldBox.appendChild(img);
+    ev.dataTransfer.clearData();
+  });
+  oldBox.addEventListener("dragover", (ev) => {
+    ev.preventDefault();
+  });
+</script>
+
+<style>
+  div {
+    border: solid 2px black;
+    width: 300px;
+    height: 300px;
+    float: left;
+    margin-right: 200px;
+  }
+  img {
+    width: 200px;
+    height: 200px;
+  }
+</style>

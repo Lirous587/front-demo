@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>色子布局</title>
+  </head>
+  <body>
+    <div class="dice-box">
+      <div class="aa">
+        <span></span>
+      </div>
+      <div class="bb">
+        <span></span>
+        <span></span>
+      </div>
+      <div class="cc">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+      <div class="dd">
+        <div>
+          <span></span>
+          <span></span>
+        </div>
+        <div>
+          <span></span>
+          <span></span>
+        </div>
+      </div>
+      <div class="ee">
+        <div>
+          <span></span>
+          <span></span>
+        </div>
+        <div>
+          <span></span>
+        </div>
+        <div>
+          <span></span>
+          <span></span>
+        </div>
+      </div>
+      <div class="ff">
+        <div>
+          <span></span>
+          <span></span>
+        </div>
+        <div>
+          <span></span>
+          <span></span>
+        </div>
+        <div>
+          <span></span>
+          <span></span>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
+
+<style>
+  * {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+  }
+  span {
+    display: inline-block;
+    width: 15px;
+    height: 15px;
+    background-color: red;
+    border-radius: 50%;
+  }
+  .dice-box {
+    margin-top: 100px;
+    display: flex;
+    justify-content: space-around;
+  }
+  .dice-box > div {
+    width: 60px;
+    height: 60px;
+    background-color: rgb(112, 192, 197);
+    border-radius: 3px;
+    box-shadow: 1px 1px 5px 2px bisque;
+  }
+  .aa {
+    position: relative;
+  }
+  .aa span {
+    position: absolute;
+    margin: 50% auto;
+    left: 50%;
+    transform: translateY(-50%) translateX(-50%);
+  }
+  .bb {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+  }
+  .cc {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    padding: 4px;
+  }
+  .cc span:nth-child(1) {
+    align-self: flex-start;
+  }
+  .cc span:nth-child(3) {
+    align-self: flex-end;
+  }
+  .dd {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  .dd > div {
+    width: 100%;
+    display: flex;
+    margin: 5px;
+    justify-content: space-around;
+  }
+  .ee {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  .ee > div {
+    width: 100%;
+    display: flex;
+    margin: 2px;
+    justify-content: space-around;
+  }
+  .ff {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  .ff > div {
+    width: 100%;
+    display: flex;
+    margin: 2px;
+    justify-content: space-around;
+  }
+</style>

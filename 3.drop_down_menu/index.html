@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>下拉菜单</title>
+  </head>
+  <body>
+    <div class="nav-box">
+      <ul>
+        <h3>Golang</h3>
+        <ul class="ulson">
+          <li class="lison">Golang</li>
+          <li class="lison">Golang</li>
+          <li class="lison">Golang</li>
+          <li class="lison">Golang</li>
+          <li class="lison">Golang</li>
+        </ul>
+      </ul>
+      <ul>
+        <h3>Golang</h3>
+        <ul class="ulson">
+          <li class="lison">Golang</li>
+          <li class="lison">Golang</li>
+          <li class="lison">Golang</li>
+          <li class="lison">Golang</li>
+          <li class="lison">Golang</li>
+        </ul>
+      </ul>
+      <ul>
+        <h3>Golang</h3>
+        <ul class="ulson">
+          <li class="lison">Golang</li>
+          <li class="lison">Golang</li>
+          <li class="lison">Golang</li>
+          <li class="lison">Golang</li>
+          <li class="lison">Golang</li>
+        </ul>
+      </ul>
+      <ul>
+        <h3>Golang</h3>
+        <ul class="ulson">
+          <li class="lison">Golang</li>
+          <li class="lison">Golang</li>
+          <li class="lison">Golang</li>
+          <li class="lison">Golang</li>
+          <li class="lison">Golang</li>
+        </ul>
+      </ul>
+    </div>
+  </body>
+</html>
+
+<script>
+  const h3List = document.querySelectorAll("h3");
+  const ulSonList = document.querySelectorAll(".ulson");
+  const liSonList = document.querySelectorAll(".lison");
+
+  const changeColor = (opt = {}) => {
+    opt.list.forEach((item) => {
+      item.addEventListener("mouseover", function () {
+        this.style.backgroundColor = "rgb(48, 155, 48)";
+      });
+      item.addEventListener("mouseleave", function () {
+        this.style.backgroundColor = opt.defaultColor;
+      });
+    });
+  };
+
+  h3List.forEach((item, index) => {
+    item.addEventListener("mouseover", () => {
+      ulSonList[index].style.display = "block";
+    });
+    item.addEventListener("mouseleave", () => {
+      ulSonList[index].style.display = "none";
+    });
+  });
+
+  ulSonList.forEach((item, index) => {
+    item.addEventListener("mouseover", () => {
+      ulSonList[index].style.display = "block";
+      console.dir(ulSonList[index]);
+    });
+    item.addEventListener("mouseleave", () => {
+      ulSonList[index].style.display = "none";
+    });
+  });
+
+  changeColor({ list: h3List, defaultColor: "rgb(55, 83, 176)" });
+  changeColor({ list: liSonList, defaultColor: "rgb(17, 39, 113)" });
+</script>
+
+<style>
+  * {
+    padding: 0px;
+    margin: 0px;
+    color: white;
+    list-style: none;
+    box-sizing: border-box;
+    font-size: 16px;
+  }
+  body {
+    background-color: #333;
+  }
+  .nav-box {
+    margin: 150px auto;
+    width: 600px;
+    height: 60px;
+    background-color: rgb(55, 83, 176);
+    box-shadow: 5px 5px 3px 3px rgb(64, 69, 72);
+    font-size: 0; /* 解决inline-block的空白问题 */
+  }
+  .nav-box > ul {
+    display: inline-block;
+    width: 150px;
+    line-height: 60px;
+    text-align: center;
+    vertical-align: top; /* 设置基准线 */
+  }
+  .nav-box ul h3:hover {
+    cursor: pointer;
+    border-radius: 5px;
+  }
+  .ulson {
+    display: none;
+  }
+
+  .ulson :nth-child(n + 2) {
+    border-top: dotted 2px red;
+  }
+  .ulson .lison {
+    background-color: rgb(17, 39, 113);
+  }
+  .ulson .lison:hover {
+    cursor: pointer;
+    border-radius: 5px;
+  }
+</style>

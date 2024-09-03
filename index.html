@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>learn demo</title>
+  </head>
+  <body>
+    <div
+      style="
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+      "
+    >
+      <h3 style="text-align: center">电影测评网</h3>
+      <div
+        style="
+          background-color: rgba(255, 0, 0, 0.571);
+          text-align: center;
+          height: 300px;
+          width: 80vw;
+        "
+      >
+        <h2 class="introduce">优秀电脑展播介绍</h2>
+      </div>
+      <div class="img-container">
+        <img src="https://liuzihao.online:8080/api/img/1.jpg" />
+        <img src="https://liuzihao.online:8080/api/img/1.jpg" />
+        <img src="https://liuzihao.online:8080/api/img/1.jpg" />
+        <img src="https://liuzihao.online:8080/api/img/1.jpg" />
+        <img src="https://liuzihao.online:8080/api/img/1.jpg" />
+      </div>
+    </div>
+  </body>
+</html>
+
+<style>
+  .img-container {
+    display: flex;
+    justify-content: center;
+    margin-top: 50px;
+    padding: 5px;
+  }
+  .img-container img {
+    max-width: 200px;
+    max-height: 200px;
+    margin: 2px;
+    padding: 3px;
+    border: dotted 1px pink;
+    box-shadow: inset 2px 3px 2px rgba(39, 173, 175, 0.358);
+    box-shadow: 2px 3px 2px rgba(39, 173, 175, 0.358);
+  }
+  .introduce {
+    position: relative;
+    margin: auto;
+    top: 50%;
+    transform: translateY(-50%);
+  }
+</style>

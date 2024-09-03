@@ -5,53 +5,50 @@
     <title>learn demo</title>
   </head>
   <body>
-    <div>
-      <span class="x-large-standard">NO.1</span>
-      <span class="x-large-standard" style="color: goldenrod">Attitude</span>
-    </div>
-    <div>
-      <span class="large-standard italic">注重细节</span
-      ><span class="x-large-standard">科学严谨</span>
-    </div>
-    <div class="xx-large-standard" style="color: grey">态度决定一切</div>
-    <div>
-      <span class="x-large-standard" style="color: grey">认真</span>
-      <span class="x-large-standard">的工作态度</span>
-    </div>
-    <div style="width: 100px" class="over italic">
-      怎 么 这 么 多话 ,醉 了 怎 么 这么多话,醉了
+    <div class="container">
+      <div style="display: flex; justify-content: space-between">
+        <div
+          style="width: 80px; height: 50px; margin: 10px"
+          class="flex-column"
+        >
+          <img src="./image/18.png" />
+        </div>
+        <div style="margin: 10px" class="flex-column">
+          <small style="display: block">姓名:罹景</small>
+          <small>班级:2302</small>
+        </div>
+      </div>
+      <small class="introduction">这是我的个人介绍,后面的被省略了</small>
     </div>
   </body>
 </html>
 
 <style>
-  body {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    margin-top: 20%;
+  .container {
+    width: 200px;
+    height: 100px;
+    background-color: rgb(0, 195, 255);
+    margin: 100px auto;
+    box-shadow: 2px 2px 10px 3px rgb(58, 54, 54);
+    border-radius: 5px;
+    padding: 5px;
+    box-sizing: border-box;
   }
-  .x-large-standard {
-    font-size: x-large;
-    font-weight: 800;
-  }
-  .xx-large-standard {
-    font-size: xx-large;
-    font-weight: 900;
-    text-shadow: 1px 1px grey;
-  }
-  .large-standard {
-    font-size: large;
-    font-weight: 800;
-  }
-  .italic {
-    font-style: italic;
-  }
-  .over {
+  .introduction {
     overflow: hidden;
     text-overflow: ellipsis;
-    text-wrap: nowrap;
-    /* white-space: nowrap; */
+    white-space: nowrap;
+    display: block;
+  }
+  img {
+    max-width: 80px;
+    max-height: 50px;
+    border-radius: 5px;
+  }
+  .flex-column {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
   }
 </style>

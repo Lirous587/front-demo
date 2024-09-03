@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>瀑布流 一</title>
+  </head>
+  <body>
+    <div class="main">
+      <div class="item">
+        <img src="../image/1.png" />
+      </div>
+      <div class="item">
+        <img src="../image/2.png" />
+      </div>
+      <div class="item">
+        <img src="../image/3.png" />
+      </div>
+      <div class="item">
+        <img src="../image/4.png" />
+      </div>
+      <div class="item">
+        <img src="../image/5.png" />
+      </div>
+      <div class="item">
+        <img src="../image/6.png" />
+      </div>
+      <div class="item">
+        <img src="../image/7.png" />
+      </div>
+      <div class="item">
+        <img src="../image/8.png" />
+      </div>
+      <div class="item">
+        <img src="../image/9.png" />
+      </div>
+      <div class="item">
+        <img src="../image/10.png" />
+      </div>
+      <div class="item">
+        <img src="../image/11.png" />
+      </div>
+      <div class="item">
+        <img src="../image/12.png" />
+      </div>
+      <div class="item">
+        <img src="../image/13.png" />
+      </div>
+      <div class="item">
+        <img src="../image/14.png" />
+      </div>
+      <div class="item">
+        <img src="../image/15.png" />
+      </div>
+      <div class="item">
+        <img src="../image/16.png" />
+      </div>
+      <div class="item">
+        <img src="../image/17.png" />
+      </div>
+      <div class="item">
+        <img src="../image/18.png" />
+      </div>
+    </div>
+  </body>
+</html>
+
+<style>
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  .main {
+    column-count: 4;
+    column-gap: 0;
+  }
+  .item {
+    padding: 3px;
+    margin: 10px;
+    position: relative;
+    counter-increment: increaseCount;
+  }
+  .item::after {
+    color: rgb(30, 255, 0);
+    font-size: 5em;
+    content: counter(increaseCount);
+    position: absolute;
+    z-index: 999;
+    top: 50%;
+    left: 50%;
+    transform: translateX(-50%) translateY(-50%);
+  }
+  .item img {
+    display: block;
+    width: 100%;
+    height: auto;
+    box-shadow: 2px 2px 5px 2px grey;
+    border-radius: 5px;
+  }
+</style>

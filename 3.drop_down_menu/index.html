@@ -45,6 +45,7 @@
           <li>Golang</li>
         </ol>
       </li>
+      <div class="sliding"></div>
     </ul>
   </body>
 </html>
@@ -53,6 +54,8 @@
   const h3List = document.querySelectorAll("h3");
   const ulSonList = document.querySelectorAll(".ulson");
   let liSonList = [];
+  const slidingNode = document.querySelector(".sliding");
+
   ulSonList.forEach((parent) => {
     let nodes = Array.from(parent.childNodes).filter(
       (node) => node.tagName === "LI"
@@ -61,9 +64,14 @@
   });
 
   const changeColor = (opt = {}) => {
-    opt.list.forEach((item) => {
+    opt.list.forEach((item, index) => {
       item.addEventListener("mouseover", function () {
-        this.style.backgroundColor = opt.targetColor || "rgb(48, 155, 48)";
+        if (opt.sliding) {
+          let leftPX = index * 150;
+          slidingNode.style.left = `${leftPX}px`;
+        } else {
+          this.style.backgroundColor = opt.targetColor || "rgb(48, 155, 48)";
+        }
       });
       item.addEventListener("mouseleave", function () {
         this.style.backgroundColor = opt.defaultColor;
@@ -82,7 +90,11 @@
     });
   };
 
-  changeColor({ list: h3List, defaultColor: "rgb(55, 83, 176)" });
+  changeColor({
+    list: h3List,
+    defaultColor: "rgb(55, 83, 176)",
+    sliding: true,
+  });
   changeColor({
     list: liSonList,
     defaultColor: "rgb(17, 39, 113)",
@@ -111,6 +123,7 @@
     background-color: rgb(55, 83, 176);
     box-shadow: 2px 2px 15px 10px rgba(37, 35, 37, 0.329);
     font-size: 0; /* 解决inline-block的空白问题 */
+    position: relative;
   }
   .nav-ul > li {
     width: 150px;
@@ -136,5 +149,17 @@
   }
   .ulson :nth-child(n + 2) {
     border-top: dotted 2px rgb(53, 196, 103);
+  }
+  .sliding {
+    width: 150px;
+    height: 60px;
+    background-color: rgba(77, 206, 77, 0.589);
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    transition: 0.3s ease;
+    border-radius: 5px;
+    pointer-events: none;
+    /* display: none; */
   }
 </style>

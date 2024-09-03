@@ -58,7 +58,7 @@
   const changeColor = (opt = {}) => {
     opt.list.forEach((item) => {
       item.addEventListener("mouseover", function () {
-        this.style.backgroundColor = "rgb(48, 155, 48)";
+        this.style.backgroundColor = opt.targetColor || "rgb(48, 155, 48)";
       });
       item.addEventListener("mouseleave", function () {
         this.style.backgroundColor = opt.defaultColor;
@@ -68,17 +68,22 @@
 
   const changeDispaly = (arr) => {
     arr.forEach((item, index) => {
-      item.addEventListener("mouseover", () => {
+      item.addEventListener("mouseover", function () {
         ulSonList[index].style.display = "block";
       });
-      item.addEventListener("mouseleave", () => {
+      item.addEventListener("mouseleave", function () {
         ulSonList[index].style.display = "none";
       });
     });
   };
 
   changeColor({ list: h3List, defaultColor: "rgb(55, 83, 176)" });
-  changeColor({ list: liSonList, defaultColor: "rgb(17, 39, 113)" });
+  changeColor({
+    list: liSonList,
+    defaultColor: "rgb(17, 39, 113)",
+    targetColor: "rgb(125, 144, 205)",
+  });
+
   changeDispaly(h3List);
   changeDispaly(ulSonList);
 </script>
@@ -93,22 +98,22 @@
     font-size: 16px;
   }
   body {
-    background-color: #333;
+    background-color: #625d5d;
   }
   .nav-box {
     margin: 150px auto;
     width: 600px;
     height: 60px;
     background-color: rgb(55, 83, 176);
-    box-shadow: 5px 5px 3px 3px rgb(64, 69, 72);
-    font-size: 0; /* 解决inline-block的空白问题 */
+    box-shadow: 2px 2px 15px 10px rgba(37, 35, 37, 0.329);
+    /* font-size: 0; 解决inline-block的空白问题 */
   }
   .nav-box > ul {
-    display: inline-block;
     width: 150px;
     line-height: 60px;
     text-align: center;
-    vertical-align: top; /* 设置基准线 */
+    float: left;
+    /* vertical-align: top; 设置基准线  如果不设置基准线*/
   }
   .nav-box ul h3:hover {
     cursor: pointer;

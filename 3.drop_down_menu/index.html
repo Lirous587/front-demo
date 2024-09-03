@@ -66,27 +66,21 @@
     });
   };
 
-  h3List.forEach((item, index) => {
-    item.addEventListener("mouseover", () => {
-      ulSonList[index].style.display = "block";
+  const changeDispaly = (arr) => {
+    arr.forEach((item, index) => {
+      item.addEventListener("mouseover", () => {
+        ulSonList[index].style.display = "block";
+      });
+      item.addEventListener("mouseleave", () => {
+        ulSonList[index].style.display = "none";
+      });
     });
-    item.addEventListener("mouseleave", () => {
-      ulSonList[index].style.display = "none";
-    });
-  });
-
-  ulSonList.forEach((item, index) => {
-    item.addEventListener("mouseover", () => {
-      ulSonList[index].style.display = "block";
-      console.dir(ulSonList[index]);
-    });
-    item.addEventListener("mouseleave", () => {
-      ulSonList[index].style.display = "none";
-    });
-  });
+  };
 
   changeColor({ list: h3List, defaultColor: "rgb(55, 83, 176)" });
   changeColor({ list: liSonList, defaultColor: "rgb(17, 39, 113)" });
+  changeDispaly(h3List);
+  changeDispaly(ulSonList);
 </script>
 
 <style>

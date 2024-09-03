@@ -5,56 +5,52 @@
     <title>learn demo</title>
   </head>
   <body>
-    <div
-      style="
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-      "
-    >
-      <h3 style="text-align: center">电影测评网</h3>
-      <div
-        style="
-          background-color: rgba(255, 0, 0, 0.571);
-          text-align: center;
-          height: 300px;
-          width: 80vw;
-        "
-      >
-        <h2 class="introduce">优秀电脑展播介绍</h2>
-      </div>
-      <div class="img-container">
-        <img src="https://liuzihao.online:8080/api/img/1.jpg" />
-        <img src="https://liuzihao.online:8080/api/img/1.jpg" />
-        <img src="https://liuzihao.online:8080/api/img/1.jpg" />
-        <img src="https://liuzihao.online:8080/api/img/1.jpg" />
-        <img src="https://liuzihao.online:8080/api/img/1.jpg" />
-      </div>
+    <div>
+      <span class="x-large-standard">NO.1</span>
+      <span class="x-large-standard" style="color: goldenrod">Attitude</span>
+    </div>
+    <div>
+      <span class="large-standard italic">注重细节</span
+      ><span class="x-large-standard">科学严谨</span>
+    </div>
+    <div class="xx-large-standard" style="color: grey">态度决定一切</div>
+    <div>
+      <span class="x-large-standard" style="color: grey">认真</span>
+      <span class="x-large-standard">的工作态度</span>
+    </div>
+    <div style="width: 100px" class="over italic">
+      怎么这么多话,醉了怎么这么多话,醉了
     </div>
   </body>
 </html>
 
 <style>
-  .img-container {
+  body {
     display: flex;
+    flex-direction: column;
     justify-content: center;
-    margin-top: 50px;
-    padding: 5px;
+    align-items: center;
+    margin-top: 20%;
   }
-  .img-container img {
-    max-width: 200px;
-    max-height: 200px;
-    margin: 2px;
-    padding: 3px;
-    border: dotted 1px pink;
-    box-shadow: inset 2px 3px 2px rgba(39, 173, 175, 0.358);
-    box-shadow: 2px 3px 2px rgba(39, 173, 175, 0.358);
+  .x-large-standard {
+    font-size: x-large;
+    font-weight: 800;
   }
-  .introduce {
-    position: relative;
-    margin: auto;
-    top: 50%;
-    transform: translateY(-50%);
+  .xx-large-standard {
+    font-size: xx-large;
+    font-weight: 900;
+    text-shadow: 1px 1px grey;
+  }
+  .large-standard {
+    font-size: large;
+    font-weight: 800;
+  }
+  .italic {
+    font-style: italic;
+  }
+  .over {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
   }
 </style>

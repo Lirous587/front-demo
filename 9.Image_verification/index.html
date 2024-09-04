@@ -125,13 +125,15 @@
       body.style.setProperty("--dynamic-move", move);
     }
   });
-  window.addEventListener("mouseup", (ev) => {
+  window.addEventListener("mouseup", async (ev) => {
     flag = false;
     const dis = ev.clientX - scrollLeftOfWindow - 50 * 3 - 200;
     if (0 < dis && dis < 20) {
       imgBox.classList.add("passed");
       scrollDom.style.display = "none";
-      alert("验证通过");
+      await setTimeout(() => {
+        alert("验证通过");
+      }, 500);
     } else {
       body.style.setProperty("--dynamic-move", "0px");
     }

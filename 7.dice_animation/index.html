@@ -2,7 +2,7 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <title>色子布局</title>
+    <title>色子3d动画</title>
   </head>
   <body>
     <div class="dice-box">
@@ -65,6 +65,9 @@
     padding: 0;
     margin: 0;
   }
+  body {
+    perspective: 1000px;
+  }
   span {
     display: inline-block;
     width: 15px;
@@ -76,16 +79,50 @@
   }
   .dice-box {
     margin-top: 100px;
+    margin-left: 400px;
+    width: 60px;
+    height: 60px;
     display: flex;
-    justify-content: space-around;
+    position: relative;
+    transform-style: preserve-3d;
+    animation: move 5s linear infinite;
+    transform-origin: center;
+  }
+  @keyframes move {
+    from {
+      transform: rotateX(0) rotateY(0) rotateZ(0);
+    }
+    to {
+      transform: rotateX(360deg) rotateY(360deg) rotateZ(360deg);
+    }
   }
   .dice-box > div {
     width: 60px;
     height: 60px;
     background-color: rgb(112, 192, 197);
-    border-radius: 3px;
-    box-shadow: 1px 1px 5px 2px bisque;
+    border-radius: 5px;
+    position: absolute;
+    box-shadow: 1px 1px 5px 2px rgb(157, 161, 169);
   }
+  .dice-box > div:nth-child(1) {
+    transform: translateZ(30px);
+  }
+  .dice-box > div:nth-child(2) {
+    transform: rotateY(90deg) translateZ(30px);
+  }
+  .dice-box > div:nth-child(3) {
+    transform: rotateY(180deg) translateZ(30px);
+  }
+  .dice-box > div:nth-child(4) {
+    transform: rotateY(-90deg) translateZ(30px);
+  }
+  .dice-box > div:nth-child(5) {
+    transform: rotateX(90deg) translateZ(30px);
+  }
+  .dice-box > div:nth-child(6) {
+    transform: rotateX(-90deg) translateZ(30px);
+  }
+
   .aa {
     position: relative;
   }

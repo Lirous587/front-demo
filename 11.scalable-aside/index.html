@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="stylesheet" href="../common.css" />
+    <title>可调侧边栏</title>
+  </head>
+  <body>
+    <div class="scalable">
+      <div class="aside">
+        <img class="aside-img" style="opacity: 0" src="../image/2.png" />
+      </div>
+      <div class="bar"></div>
+      <div class="main"></div>
+    </div>
+  </body>
+</html>
+
+<style>
+  body {
+    --aside-width: 400px;
+  }
+  .scalable {
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+  }
+  .aside {
+    width: clamp(200px, var(--aside-width), 100%);
+    background-color: #81ecec;
+    padding: 20px;
+  }
+  .aside .aside-img {
+    width: 100%;
+    height: auto;
+    margin: 0 auto;
+    border-radius: 8px;
+    box-shadow: 2px 1px 5px 2px pink;
+    transition: opacity 0.5s ease;
+  }
+  .scalable .bar {
+    width: 15px;
+    background-color: #e84393;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .scalable .bar::after {
+    content: "||";
+    font-size: 20px;
+    width: 20px;
+    text-align: center;
+  }
+  .scalable .bar:hover {
+    cursor: col-resize;
+  }
+  .main {
+    flex: 1;
+    background-color: #74b9ff;
+  }
+</style>
+
+<script>
+  const $dom = (tag) => {
+    return document.querySelector(tag);
+  };
+  const body = document.body;
+
+  let startWidth = localStorage.getItem("bar_w");
+  body.style.setProperty("--aside-width", `${startWidth}px`);
+
+  $dom(".aside-img").style.opacity = 1;
+
+  const startDrag = (event) => {
+    // 设置初始width
+    const dragOn = (event) => {
+      const x = event.clientX;
+      body.style.setProperty("--aside-width", `${x}px`);
+    };
+
+    body.addEventListener("mouseover", dragOn);
+
+    body.addEventListener("mouseup", (event) => {
+      localStorage.setItem("bar_w", event.clientX);
+      body.removeEventListener("mouseover", dragOn);
+    });
+  };
+
+  $dom(".bar").addEventListener("mousedown", startDrag);
+</script>

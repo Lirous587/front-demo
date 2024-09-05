@@ -1,0 +1,9 @@
+.drag-box {
+  width: 100px;
+  height: 100px;
+  box-sizing: border-box;
+  left: 300px;
+  top: 200px;
+  background-color: aquamarine;
+  position: absolute;
+}

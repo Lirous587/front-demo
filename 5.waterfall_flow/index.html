@@ -4,6 +4,7 @@
     <meta charset="UTF-8" />
     <title>瀑布流 一</title>
     <link rel="stylesheet" href="../common.css" />
+    <link rel="stylesheet" href="./default.css" />
   </head>
   <body>
     <div class="main">
@@ -64,33 +65,3 @@
     </div>
   </body>
 </html>
-
-<style>
-  .main {
-    column-count: 4;
-    column-gap: 0;
-  }
-  .item {
-    padding: 3px;
-    margin: 10px;
-    position: relative;
-    counter-increment: increaseCount;
-  }
-  .item::after {
-    color: rgb(30, 255, 0);
-    font-size: 5em;
-    content: counter(increaseCount);
-    position: absolute;
-    z-index: 999;
-    top: 50%;
-    left: 50%;
-    transform: translateX(-50%) translateY(-50%);
-  }
-  .item img {
-    display: block;
-    width: 100%;
-    height: auto;
-    box-shadow: 2px 2px 5px 2px grey;
-    border-radius: 5px;
-  }
-</style>

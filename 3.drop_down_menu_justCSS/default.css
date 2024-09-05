@@ -1,0 +1,65 @@
+* {
+  font-size: 16px;
+}
+body {
+  background-color: #625d5d;
+}
+.navul {
+  margin: 150px auto;
+  width: 600px;
+  height: 60px;
+  position: relative;
+  display: flex;
+  background-color: rgb(55, 83, 176);
+  box-shadow: 2px 2px 15px 10px rgba(37, 35, 37, 0.329);
+  border-radius: 10px;
+}
+.navul .navli {
+  width: 150px;
+  text-align: center;
+  line-height: 60px;
+}
+.navul .navli ul {
+  display: none;
+  box-shadow: 2px 2px 5px 5px rgba(37, 35, 37, 0.329);
+  border-radius: 10px;
+}
+.navul .navli:hover ul {
+  display: block;
+}
+.navul .navli ul li:hover {
+  background-color: rgba(81, 128, 207, 0.79);
+  border-radius: 5px;
+}
+.navul .navli ul li:nth-child(n + 2) {
+  border-top: dotted 2px black;
+}
+.navul .navli:hover,
+.navul .navli li:hover {
+  cursor: pointer;
+}
+.sliding {
+  position: absolute;
+  height: 60px;
+  width: 150px;
+  background-color: rgba(30, 113, 196, 0.712);
+  transition: 0.5s;
+  pointer-events: none;
+  display: none;
+}
+.navul .navli:nth-child(1):hover ~ .sliding {
+  display: block;
+  left: 0px;
+}
+.navul .navli:nth-child(2):hover ~ .sliding {
+  display: block;
+  left: 150px;
+}
+.navul .navli:nth-child(3):hover ~ .sliding {
+  display: block;
+  left: 300px;
+}
+.navul .navli:nth-child(4):hover ~ .sliding {
+  display: block;
+  left: 450px;
+}

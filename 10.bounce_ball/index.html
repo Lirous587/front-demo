@@ -4,6 +4,7 @@
     <meta charset="UTF-8" />
     <link rel="stylesheet" href="../common.css" />
     <title>弹跳小球</title>
+    <link rel="stylesheet" href="./default.css" />
   </head>
   <body>
     <div class="ball-container">
@@ -20,76 +21,3 @@
     </div>
   </body>
 </html>
-
-<style>
-  body {
-    display: flex;
-    width: 100vw;
-    height: 100vh;
-    justify-content: space-around;
-  }
-  .ball-container {
-    margin-top: 300px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-  }
-  .ball-container .ball {
-    width: 50px;
-    height: 50px;
-    border-radius: 50%;
-    animation: ball-move 1s ease-in-out infinite;
-  }
-  .ball-container .shadow {
-    width: 40px;
-    height: 20px;
-    background: linear-gradient(
-      to bottom,
-      rgb(139, 159, 154),
-      rgb(214, 203, 203)
-    );
-    border-radius: 100%;
-    animation: shadow-move 1s ease-in-out infinite;
-  }
-  .ball-container .red {
-    background: linear-gradient(to bottom, rgb(209, 49, 49), rgb(122, 44, 44));
-  }
-  .ball-container .blue {
-    background: linear-gradient(
-      to bottom,
-      rgb(49, 140, 209),
-      rgb(89, 102, 138)
-    );
-    animation-delay: 0.1s;
-  }
-  .ball-container .green {
-    background: linear-gradient(to bottom, rgb(72, 180, 88), rgb(60, 109, 72));
-    animation-delay: 0.2s;
-  }
-
-  @keyframes ball-move {
-    0% {
-      transform: translateY(0px);
-    }
-    50% {
-      transform: translateY(-200px);
-    }
-    100% {
-      transform: translateY(0px);
-    }
-  }
-  @keyframes shadow-move {
-    0% {
-      transform: scale(1);
-      opacity: 1;
-    }
-    50% {
-      transform: scale(0.5);
-      opacity: 0.5;
-    }
-    100% {
-      transform: scale(1);
-      opacity: 1;
-    }
-  }
-</style>

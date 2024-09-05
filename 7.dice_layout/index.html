@@ -4,6 +4,7 @@
     <meta charset="UTF-8" />
     <title>色子布局</title>
     <link rel="stylesheet" href="../common.css" />
+    <link rel="stylesheet" href="./default.css" />
   </head>
   <body>
     <div class="dice-box">
@@ -59,91 +60,3 @@
     </div>
   </body>
 </html>
-
-<style>
-  span {
-    display: inline-block;
-    width: 15px;
-    height: 15px;
-    background-color: red;
-    border-radius: 50%;
-    box-shadow: inset 0 2px rgba(205, 59, 59, 0.747),
-      inset -2px 0 rgba(205, 59, 59, 0.747);
-  }
-  .dice-box {
-    margin-top: 100px;
-    display: flex;
-    justify-content: space-around;
-  }
-  .dice-box > div {
-    width: 60px;
-    height: 60px;
-    background-color: rgb(112, 192, 197);
-    border-radius: 3px;
-    box-shadow: 1px 1px 5px 2px bisque;
-  }
-  .aa {
-    position: relative;
-  }
-  .aa span {
-    position: absolute;
-    margin: 50% auto;
-    left: 50%;
-    transform: translateY(-50%) translateX(-50%);
-  }
-  .bb {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: space-around;
-  }
-  .cc {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: space-around;
-    padding: 4px;
-  }
-  .cc span:nth-child(1) {
-    align-self: flex-start;
-  }
-  .cc span:nth-child(3) {
-    align-self: flex-end;
-  }
-  .dd {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-  }
-  .dd > div {
-    width: 100%;
-    display: flex;
-    margin: 5px;
-    justify-content: space-around;
-  }
-  .ee {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-  }
-  .ee > div {
-    width: 100%;
-    display: flex;
-    margin: 2px;
-    justify-content: space-around;
-  }
-  .ff {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-  }
-  .ff > div {
-    width: 100%;
-    display: flex;
-    margin: 2px;
-    justify-content: space-around;
-  }
-</style>

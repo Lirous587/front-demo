@@ -1,0 +1,3 @@
+css选择器只能选择后面的元素 无法选中前面的元素
+
+img input这些无内容的元素 无法使用before after伪类

@@ -5,19 +5,22 @@ body {
   align-items: center;
   --search-container-width: 600px;
   --search-container-height: 80px;
+  --search-container-color: #7efff5;
   --icon-width: 60px;
   --icon-height: 60px;
   --icon-circle-width: 40px;
   --icon-circle-height: 40px;
-  --icon-bar-width: 2px;
-  --icon-bar-height: 10px;
+  --icon-circle-border: 2.5px;
+  --icon-bar-width: 2.5px;
+  --icon-bar-height: 12px;
+  --icon-color: #cd84f1;
   --search-gap: 10px;
   --search-oWidth: calc(var(--icon-width) + var(--search-gap) * 2);
 }
 .search-container {
   width: var(--search-oWidth);
   height: var(--search-container-height);
-  background-color: #74b9ff;
+  background-color: var(--search-container-color);
   transform: translateY(-50%);
   border-radius: 20px;
   box-shadow: 2px 2px 6px #2d3436;
@@ -36,7 +39,6 @@ body {
   left: var(--search-gap);
   transform: translateY(-50%);
 }
-
 .icon::before,
 .icon::after {
   content: "";
@@ -45,7 +47,7 @@ body {
 .icon::before {
   width: var(--icon-circle-width);
   height: var(--icon-circle-width);
-  border: 1px solid #dfe6e9;
+  border: var(--icon-circle-border) solid var(--icon-color);
   border-radius: 50%;
   top: 50%;
   left: 50%;
@@ -54,10 +56,13 @@ body {
 .icon::after {
   width: var(--icon-bar-width);
   height: var(--icon-bar-height);
-  background-color: #dfe6e9;
+  background-color: var(--icon-color);
   left: calc(var(--icon-width) / 2 + var(--icon-circle-width) / 2);
-  top: calc(var(--icon-height) / 2);
-  transform: translateY(7px) rotateZ(-45deg);
+  top: calc(
+    var(--icon-height) / 2 + var(--icon-circle-height) / 4 +
+      var(--icon-circle-border) / 2
+  );
+  transform: rotateZ(-45deg);
 }
 
 .search {
@@ -74,12 +79,13 @@ body {
   width: 100%;
   height: 100%;
   border: 0px;
-  background-color: #74b9ff;
+  background-color: var(--search-container-color);
   font-size: 2em;
   outline: 0;
   border: none;
   color: rgb(37, 39, 40);
 }
+
 .delete {
   position: absolute;
   width: var(--icon-circle-width);
@@ -99,7 +105,7 @@ body {
   width: calc(var(--icon-circle-width) - 10px);
   height: var(--icon-bar-width);
   transform: translateY(-50%);
-  background-color: #6c5ce7;
+  background-color: var(--icon-color);
 }
 .delete::after {
   transform: rotateZ(45deg);

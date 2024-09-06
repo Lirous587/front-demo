@@ -21,17 +21,18 @@ oSearch_container.addEventListener("click", (event) => {
   event.stopImmediatePropagation();
 });
 
-oSearch_container.addEventListener("mouseover", (event) => {
+oSearch_container.addEventListener("mouseover", () => {
   oSearch_container.style.width = oSearch_container_width;
 });
-oSearch_container.addEventListener("mouseleave", (event) => {
+oSearch_container.addEventListener("mouseleave", () => {
   if (!flag) {
     oSearch_container.style.width = oSearch_container_oWidth;
   }
 });
-body.addEventListener("click", (event) => {
+body.addEventListener("click", () => {
   if (flag) {
     oSearch_container.style.width = oSearch_container_oWidth;
+    flag = false;
   }
 });
 

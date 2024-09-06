@@ -3,6 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <link rel="stylesheet" href="../common.css" />
+    <link rel="stylesheet" href="./default.css">
     <title>js实现放大镜效果</title>
   </head>
   <body>
@@ -17,77 +18,4 @@
   </body>
 </html>
 
-<style>
-  body {
-    display: flex;
-    width: 100vw;
-    height: 100vh;
-    justify-content: center;
-  }
-  .enlarge-lens-container {
-    width: 600px;
-    margin: auto;
-    position: relative;
-    overflow: hidden;
-  }
-  .sImg img {
-    width: 100%;
-    height: auto;
-  }
-  .enlarge-lens-container .mirror {
-    width: 200px;
-    height: 200px;
-    overflow: hidden;
-    border-radius: 50%;
-    position: absolute;
-    top: 0;
-    left: 0;
-    box-shadow: 2px 2px 5px beige;
-  }
-  .mirror img {
-    position: absolute;
-    opacity: 0;
-  }
-</style>
-
-<script>
-  const $dom = (c) => document.querySelector(c);
-  const enlargeContainerDom = $dom(".enlarge-lens-container");
-  const mirrorDom = $dom(".mirror");
-
-  const sImgDom = $dom(".sImg");
-  const bImgDom = $dom(".bImg");
-
-  enlargeContainerDom.addEventListener("mousedown", () => {
-    bImgDom.style.opacity = 1;
-    // 设置 mirrorDom 的值为client - enlargeContainerDom - mirror/2
-    enlargeContainerDom.addEventListener("mousemove", (event) => {
-      const small_x =
-        event.clientX - enlargeContainerDom.getBoundingClientRect().left;
-
-      const small_y =
-        event.clientY - enlargeContainerDom.getBoundingClientRect().top;
-
-      const mirror_w = mirrorDom.getBoundingClientRect().width;
-      const mirror_h = mirrorDom.getBoundingClientRect().height;
-      const mirror_x = small_x - mirror_w / 2;
-      const mirror_y = small_y - mirror_h / 2;
-
-      const ratioH =
-        bImgDom.getBoundingClientRect().height /
-        sImgDom.getBoundingClientRect().height;
-
-      const ratioW =
-        bImgDom.getBoundingClientRect().width /
-        sImgDom.getBoundingClientRect().width;
-
-      const big_x = -mirror_w / 2 + small_x * ratioW;
-      const big_y = -mirror_h / 2 + small_y * ratioH;
-
-      mirrorDom.style.left = mirror_x + "px";
-      mirrorDom.style.top = mirror_y + "px";
-      bImgDom.style.left = -big_x + "px";
-      bImgDom.style.top = -big_y + "px";
-    });
-  });
-</script>
+<script src="./default.js"></script>

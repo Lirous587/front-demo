@@ -1,3 +1,7 @@
 css选择器只能选择后面的元素 无法选中前面的元素
 
 img input这些无内容的元素 无法使用before after伪类
+
+
+可以使用事件对象的stopPropagation()方法来阻止冒泡，
+使用stopImmediatePropagation()方法来阻止进一步的事件处理。

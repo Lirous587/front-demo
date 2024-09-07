@@ -2,8 +2,203 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <link rel="stylesheet" href="./common.css" />
+    <link rel="stylesheet" href="../common.css" />
+    <link rel="stylesheet" href="./default.css" />
     <title>Document</title>
   </head>
-  <body></body>
+  <body>
+    <main>
+      <div class="slide-container">
+        <div class="imgs-box">
+          <div
+            class="item"
+            style="
+              background-image: url('https://liuzihao.online:8080/api/img/1.jpg');
+            "
+          ></div>
+          <div
+            class="item"
+            style="
+              background-image: url('https://liuzihao.online:8080/api/img/2.jpg');
+            "
+          ></div>
+          <div
+            class="item"
+            style="
+              background-image: url('https://liuzihao.online:8080/api/img/3.jpg');
+            "
+          ></div>
+          <div
+            class="item"
+            style="
+              background-image: url('https://liuzihao.online:8080/api/img/4.jpg');
+            "
+          ></div>
+        </div>
+
+        <div class="bottom-button">
+          <span class="s-btn">&lt;</span>
+          <span class="s-btn">&gt;</span>
+        </div>
+      </div>
+    </main>
+  </body>
 </html>
+
+<style>
+  :root {
+    --slide-container-height: 550px;
+    --slide-item-height: 200px;
+    --slide-item-width: 100px;
+    --slide-item-gap: 120px;
+  }
+  .slide-container {
+    height: var(--slide-container-height);
+    width: 100vw;
+    background-color: #18dcff;
+    position: relative;
+  }
+
+  .imgs-box .item {
+    height: var(--slide-item-height);
+    width: var(--slide-item-width);
+    position: absolute;
+    display: inline-block;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    top: 50%;
+    transform: translateY(-50%);
+    border-radius: 10px;
+    box-shadow: 2px 2px 3px blanchedalmond, inset 2px 2px 3px blanchedalmond;
+    transition: 0.5s ease-in-out;
+    animation: img-action 0.6s ease-in-out 0.2s forwards;
+  }
+  @keyframes img-action {
+    0% {
+      filter: blur(0);
+      transform: rotateZ(0) scale(1);
+    }
+    50% {
+      filter: blur(30px);
+      transform: rotateZ(180deg) scale(0.3);
+    }
+    100% {
+      filter: blur(0);
+      transform: rotateZ(360deg) scale(1);
+    }
+  }
+  .imgs-box .item:first-child {
+    height: var(--slide-container-height);
+    width: 100vw;
+    top: 0;
+    transform: translateY(0);
+    box-shadow: none;
+    background-size: cover;
+  }
+  .imgs-box .item:nth-child(2) {
+    right: calc(var(--slide-item-gap) * 2.2);
+  }
+  .imgs-box .item:nth-child(2) {
+    right: calc(var(--slide-item-gap) * 1.2);
+  }
+  .imgs-box .item:nth-child(3) {
+    right: calc(var(--slide-item-gap) * 0.2);
+  }
+  .imgs-box .item:nth-child(n + 4) {
+    opacity: 0;
+    right: calc(var(--slide-item-gap) * 0.2);
+  }
+
+  .bottom-button {
+    position: absolute;
+    bottom: 50px;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+  .s-btn {
+    display: inline-block;
+    font-weight: bold;
+    font-size: 20px;
+    color: #ffb8b8;
+    height: 50px;
+    width: 50px;
+    line-height: 50px;
+    text-align: center;
+    border: 2px solid #ffcccc;
+    border-radius: 50%;
+    margin: 0 20px;
+    background-color: #7efff5;
+  }
+  .s-btn:hover {
+    cursor: pointer;
+    animation: btn-action 0.5s ease-in-out forwards;
+  }
+  @keyframes btn-action {
+    from {
+      color: #ffb8b8;
+      background-color: #7efff5;
+    }
+    to {
+      color: #32ff7e;
+      background-color: #17ebbd;
+    }
+  }
+</style>
+
+<script>
+  const btns = document.querySelectorAll(".s-btn");
+
+  // 用于清除计时
+  let interval = setInterval(() => {
+    nextPic();
+  }, 5000);
+
+  // 用于锁定按钮点击
+  let isLocked = false;
+
+  const clearMyInterval = () => {
+    if (interval) {
+      clearInterval(interval);
+    }
+  };
+
+  const setNewInterval = () => {
+    return setInterval(() => {
+      nextPic();
+    }, 5000);
+  };
+
+  const unlock = () => {
+    return new Promise((resolve) => setTimeout(resolve, 800)).finally(() => {
+      isLocked = false;
+    });
+  };
+
+  const lastPic = async () => {
+    if (isLocked) return;
+    isLocked = true;
+
+    clearMyInterval();
+    let nowImgList = document.querySelectorAll(".item");
+    document
+      .querySelector(".imgs-box")
+      .prepend(nowImgList[nowImgList.length - 1]);
+    interval = setNewInterval();
+
+    await unlock();
+  };
+  const nextPic = async () => {
+    if (isLocked) return;
+    isLocked = true;
+
+    clearMyInterval();
+    let nowImgList = document.querySelectorAll(".item");
+    document.querySelector(".imgs-box").appendChild(nowImgList[0]);
+    interval = setNewInterval();
+    await unlock();
+  };
+
+  btns[0].addEventListener("click", lastPic);
+  btns[1].addEventListener("click", nextPic);
+</script>

@@ -1,4 +1,5 @@
 #image files
 image/*
 ./someIssue.txt
-./index.html
+index.html
+wait-copy/*

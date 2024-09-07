@@ -5,3 +5,7 @@ img input这些无内容的元素 无法使用before after伪类
 
 可以使用事件对象的stopPropagation()方法来阻止冒泡，
 使用stopImmediatePropagation()方法来阻止进一步的事件处理。
+
+脱离文本流的定位均无法撑开父元素 如 float absolute
+
+当要展示图片时使用background-image往往比使用img更好操作 可以避免宽高丢失的情况(如想使用position为absolute的img撑开父元素)

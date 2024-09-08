@@ -20,7 +20,7 @@ const init_snowflakes = () => {
       x: Math.random() * _w,
       y: Math.random() * _h,
       r: Math.random() * 5 + 1,
-      x_speed: Math.random() * 2 + 1,
+      x_speed: Math.random() * -2 + 2,
       y_speed: Math.random() * 1 + 0.5,
     };
     snowflakes.push(snowflake);
@@ -32,6 +32,7 @@ const snowflake_move = () => {
     item.x += item.x_speed;
     item.y += item.y_speed;
     if (item.x > _w) item.x = 0;
+    if (item.x < 0) item.x = _w;
     if (item.y > _h) item.y = 0;
   });
 };

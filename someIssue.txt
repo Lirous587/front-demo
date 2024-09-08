@@ -9,3 +9,11 @@ img input这些无内容的元素 无法使用before after伪类
 脱离文本流的定位均无法撑开父元素 如 float absolute
 
 当要展示图片时使用background-image往往比使用img更好操作 可以避免宽高丢失的情况(如想使用position为absolute的img撑开父元素)
+
+对画布上元素操作时 对象里面写速度是一种很优雅的方式
+
+window.requestAnimationFrame() 方法会告诉浏览器你希望执行一个动画。
+它要求浏览器在下一次重绘之前，调用用户提供的回调函数。
+
+beginPath() 开启新路径，closePath() 关闭路径（可选），fill() 和 stroke() 用于渲染路径。
+每次绘制复杂图形时，应该在每个独立图形之前调用 beginPath()，使图形保持独立路径，避免将多个图形合并为同一条复杂路径，导致性能问题。

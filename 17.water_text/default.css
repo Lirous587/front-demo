@@ -1,0 +1,34 @@
+body {
+  background-color: #8c7ae6;
+}
+#water {
+  text-align: center;
+  margin-top: 200px;
+}
+#water h1 {
+  font-size: 8em;
+  background: url(./water.png) repeat-x;
+  background-size: contain;
+  z-index: 1;
+  -webkit-background-clip: text;
+  color: transparent;
+  animation: water-action 10s infinite;
+}
+
+@keyframes water-action {
+  0% {
+    background-position: left top;
+  }
+  25% {
+    background-position: center bottom;
+  }
+  50% {
+    background-position: right top;
+  }
+  75% {
+    background-position: center bottom;
+  }
+  100% {
+    background-position: left top;
+  }
+}

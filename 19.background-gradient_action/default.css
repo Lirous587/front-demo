@@ -1,0 +1,35 @@
+body {
+  height: 100vh;
+  background: linear-gradient(
+    to right bottom,
+    #eccc68,
+    #70a1ff,
+    #ff4757,
+    #747d8c
+  );
+  color: rgb(34, 102, 205);
+  animation: bg-action 5s ease infinite;
+}
+
+@keyframes bg-action {
+  0% {
+    background-position: top left;
+    background-size: 100%;
+  }
+  25% {
+    background-position: 50% 50%;
+    background-size: 200%;
+  }
+  50% {
+    background-position: 100% 100%;
+    background-size: 400%;
+  }
+  75% {
+    background-position: 50% 50%;
+    background-size: 200%;
+  }
+  100% {
+    background-position: bottom right;
+    background-size: 100%;
+  }
+}

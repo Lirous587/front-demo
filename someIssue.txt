@@ -17,3 +17,7 @@ window.requestAnimationFrame() 方法会告诉浏览器你希望执行一个动�
 
 beginPath() 开启新路径，closePath() 关闭路径（可选），fill() 和 stroke() 用于渲染路径。
 每次绘制复杂图形时，应该在每个独立图形之前调用 beginPath()，使图形保持独立路径，避免将多个图形合并为同一条复杂路径，导致性能问题。
+
+关于键盘监听事件
+event.which表示点击的按键的编码。这个编码是该按键的unicode编码
+需要注意的是，按下键盘上的A时，event.which值是a的编码，只有同时按下shift和A，event.which的值才是A的编码。同理event.key的值也是(即大写输出要按下shift)

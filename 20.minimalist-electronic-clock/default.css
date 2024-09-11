@@ -1,0 +1,13 @@
+body {
+  background-color: #70a1ff;
+}
+#clock {
+  width: 5em;
+  margin: 300px auto;
+  font-size: 4em;
+  color: black;
+  text-align: center;
+  box-shadow: 2px 2px 4px black;
+  border-radius: 15px;
+  background-color: #f1f2f6;
+}

@@ -1,0 +1,44 @@
+:root {
+  --btn-container-size: 80px;
+  --btn-cricle-size: 30px;
+  --btn-vertical-height: 20px;
+  --btn-vertical-width: 4px;
+}
+body {
+  background-color: #95a5a6;
+}
+
+.btn-container {
+  margin: 200px auto;
+  position: relative;
+  height: var(--btn-container-size);
+  width: var(--btn-container-size);
+  background: white;
+  border-radius: 50%;
+  box-shadow: 2px 2px 5px whitesmoke, -2px -2px 5px whitesmoke;
+}
+.btn-container::before {
+  content: "";
+  display: block;
+  position: absolute;
+  height: var(--btn-cricle-size);
+  width: var(--btn-cricle-size);
+  left: 50%;
+  top: 50%;
+  transform: translateX(-50%) translateY(-50%);
+  border: solid 4px #95a5a6;
+  border-radius: 50%;
+  clip-path: polygon(0% 0%, 50% 25%, 100% 0, 100% 100%, 0 100%);
+}
+.btn-container::after {
+  content: "";
+  display: block;
+  position: absolute;
+  background-color: #95a5a6;
+  height: var(--btn-vertical-height);
+  width: var(--btn-vertical-width);
+  left: 50%;
+  top: calc(50% - var(--btn-cricle-size) + var(--btn-vertical-height) * 0.4);
+  transform: translateX(-50%);
+  border-radius: 5px;
+}

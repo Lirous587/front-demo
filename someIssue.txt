@@ -1,23 +1,34 @@
+1.css选择器
 css选择器只能选择后面的元素 无法选中前面的元素
 
+2.限制使用伪类的元素
 img input这些无内容的元素 无法使用before after伪类
 
-
+3.事件传播和事件冒泡
 可以使用事件对象的stopPropagation()方法来阻止冒泡，
 使用stopImmediatePropagation()方法来阻止进一步的事件处理。
 
+4.父级塌陷
 脱离文本流的定位均无法撑开父元素 如 float absolute
 
+5.更好的图片展示
 当要展示图片时使用background-image往往比使用img更好操作 可以避免宽高丢失的情况(如想使用position为absolute的img撑开父元素)
 
+6.canvas运动建议
 对画布上元素操作时 对象里面写速度是一种很优雅的方式
 
-window.requestAnimationFrame() 方法会告诉浏览器你希望执行一个动画。
+7.优化动画
+window.requestAnimationFrame() 方法会告诉浏览器你希望执行一个动画。 它能让浏览器在执行动画时更加流畅，同时避免不必要的重绘 一般是60帧
 它要求浏览器在下一次重绘之前，调用用户提供的回调函数。
 
+8.
 beginPath() 开启新路径，closePath() 关闭路径（可选），fill() 和 stroke() 用于渲染路径。
 每次绘制复杂图形时，应该在每个独立图形之前调用 beginPath()，使图形保持独立路径，避免将多个图形合并为同一条复杂路径，导致性能问题。
 
 关于键盘监听事件
 event.which表示点击的按键的编码。这个编码是该按键的unicode编码
 需要注意的是，按下键盘上的A时，event.which值是a的编码，只有同时按下shift和A，event.which的值才是A的编码。同理event.key的值也是(即大写输出要按下shift)
+
+给input设置appearance可以消除其默认样式,再将其样式需要点击的部位,这样我们就不用使用label来控制其checked了
+
+display: inline-block 保证 .gradient-text 元素只占用文字的宽度，而不是整个行宽 这样我们设置文字渐变就可以从文字开头开始了

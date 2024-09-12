@@ -1,4 +1,4 @@
-:root {
+/* :root {
   --btn-container-size: 80px;
   --btn-cricle-size: 30px;
   --btn-vertical-height: 20px;
@@ -41,4 +41,4 @@ body {
   top: calc(50% - var(--btn-cricle-size) + var(--btn-vertical-height) * 0.4);
   transform: translateX(-50%);
   border-radius: 5px;
-}
+} */

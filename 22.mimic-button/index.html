@@ -7,6 +7,94 @@
     <title>拟态按钮</title>
   </head>
   <body>
-    <div class="btn-container"></div>
+    <div class="btn-container">
+      <input type="checkbox" />
+      <div class="icon-container">
+        <div class="common cricle"></div>
+        <div class="common vertical"></div>
+      </div>
+    </div>
   </body>
 </html>
+
+<style>
+  :root {
+    --btn-container-size: 80px;
+    --icon-container-size: 80px;
+    --icon-cricle-size: 30px;
+    --icon-vertical-height: 20px;
+    --icon-vertical-width: 4px;
+  }
+  body {
+    background-color: #bdc3c7;
+  }
+
+  .btn-container {
+    width: var(--btn-container-size);
+    height: var(--btn-container-size);
+    position: relative;
+    margin: 300px auto;
+  }
+  input[type="checkbox"] {
+    appearance: none;
+    /* -webkit-appearance: none; */
+    display: block;
+    position: absolute;
+    height: var(--btn-container-size);
+    width: var(--btn-container-size);
+    top: 50%;
+    left: 50%;
+    transform: translateX(-50%) translateY(-50%);
+    background: white;
+    border-radius: 50%;
+    box-shadow: 2px 2px 5px rgba(42, 41, 41, 0.763),
+      -2px -2px 5px rgba(42, 41, 41, 0.763);
+    border: solid 5px rgba(255, 255, 255, 0.616);
+  }
+
+  .icon-container {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translateX(-50%) translateY(-50%);
+    pointer-events: none;
+  }
+
+  .icon-container .common {
+    position: absolute;
+  }
+
+  .icon-container .cricle {
+    height: var(--icon-cricle-size);
+    width: var(--icon-cricle-size);
+    left: 50%;
+    top: 50%;
+    transform: translateX(-50%) translateY(-50%);
+    border: solid 4px #95a5a6;
+    border-radius: 50%;
+    clip-path: polygon(0% 0%, 50% 25%, 100% 0, 100% 100%, 0 100%);
+  }
+  .icon-container .vertical {
+    background-color: #95a5a6;
+    height: var(--icon-vertical-height);
+    width: var(--icon-vertical-width);
+    left: 50%;
+    top: calc(
+      50% - var(--icon-cricle-size) + var(--icon-vertical-height) * 0.4
+    );
+    transform: translateX(-50%);
+    border-radius: 5px;
+  }
+
+  input[type="checkbox"]:checked {
+    box-shadow: inset 2px 2px 5px rgba(240, 238, 238, 0.763),
+      inset -2px -2px 5px rgba(240, 238, 238, 0.763);
+  }
+
+  input[type="checkbox"]:checked ~ .icon-container .cricle {
+    border-color: goldenrod;
+  }
+  input[type="checkbox"]:checked ~ .icon-container .vertical {
+    background-color: goldenrod;
+  }
+</style>

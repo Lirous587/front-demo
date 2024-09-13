@@ -21,14 +21,33 @@ img input这些无内容的元素 无法使用before after伪类
 window.requestAnimationFrame() 方法会告诉浏览器你希望执行一个动画。 它能让浏览器在执行动画时更加流畅，同时避免不必要的重绘 一般是60帧
 它要求浏览器在下一次重绘之前，调用用户提供的回调函数。
 
-8.
+8.canvas画图path
 beginPath() 开启新路径，closePath() 关闭路径（可选），fill() 和 stroke() 用于渲染路径。
 每次绘制复杂图形时，应该在每个独立图形之前调用 beginPath()，使图形保持独立路径，避免将多个图形合并为同一条复杂路径，导致性能问题。
 
-关于键盘监听事件
+9.关于键盘监听事件
 event.which表示点击的按键的编码。这个编码是该按键的unicode编码
 需要注意的是，按下键盘上的A时，event.which值是a的编码，只有同时按下shift和A，event.which的值才是A的编码。同理event.key的值也是(即大写输出要按下shift)
 
+10.appearance
 给input设置appearance可以消除其默认样式,再将其样式需要点击的部位,这样我们就不用使用label来控制其checked了
 
-display: inline-block 保证 .gradient-text 元素只占用文字的宽度，而不是整个行宽 这样我们设置文字渐变就可以从文字开头开始了
+11.background的裁剪问题
+对于文字裁剪 我们使用background-clip其实只是让background在有文字的部分显示出来 并不能改变其渐变范围
+要想让其从文字头部开始我们可以设置其display: inline-block 
+保证 .gradient-text 元素只占用文字的宽度，而不是整个行宽 这样我们设置文字渐变就可以从文字开头开始了
+
+12.inline-block导致的幽灵节点的问题
+在CSS中，leading（line-height - font-size）被平均分成了两半， 
+分别加到文本行上方和下方
+
+img为inline-block 存在幽灵节点
+其效果和再其后加一个字母x类似 又因为vertical-aligin默认为基线对齐
+所以底部会有一块空隙
+解决方法
+    1.设置 vertical-aligin:bttom
+
+    2.将图片display设置为block 这样就没有幽灵节点了 再移除我们加入的字,就无间隙产生了
+
+    3.设置行高 将父元素的行高设置为 0
+推荐使用方法一 使用方法三会容易导致混乱

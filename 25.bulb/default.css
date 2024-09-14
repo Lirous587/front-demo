@@ -1,0 +1,96 @@
+:root {
+  --head-size: 150px;
+  --cylinder-width: 20px;
+  --cylinder-height: 100px;
+  --heade-line-width: 80px;
+  --heade-line-height: 100px;
+  --bottom-width: 60px;
+  --bottom-height: 40px;
+  --bottom-line-width: 70px;
+  --bottom-line-height: 4px;
+  --bottom-after-size: 13px;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background: #000;
+  user-select: none;
+}
+#buld-input:checked ~ label > .buld-head {
+  background: radial-gradient(white, yellow);
+  filter: drop-shadow(0 0 80px white);
+}
+#buld-input:checked ~ label > .buld-head .cylinder {
+  background-color: rgba(255, 255, 255, 1);
+}
+
+#buld-input:checked ~ label > .buld-head .line polyline {
+  stroke: rgba(255, 255, 255, 1);
+}
+.buld-head {
+  width: var(--head-size);
+  height: var(--head-size);
+  border-radius: 50%;
+  background: radial-gradient(rgb(0, 0, 0) 40%, grey);
+  position: relative;
+  transition: filter 0.5s;
+}
+.cylinder {
+  width: var(--cylinder-width);
+  height: var(--cylinder-height);
+  background-color: grey;
+  position: absolute;
+  left: 50%;
+  bottom: 0%;
+  transform: translate(-50%, 0);
+  border-radius: 8px 8px 0 0;
+  transition: background-color 0.5s;
+}
+polyline {
+  fill: transparent;
+  stroke: rgba(168, 159, 159, 1);
+  stroke-width: 3px;
+  transition: stroke 0.5s;
+}
+.line {
+  position: absolute;
+  width: var(--heade-line-width);
+  height: var(--heade-line-height);
+  left: 50%;
+  bottom: 0px;
+  transform: translate(-50%, 0);
+}
+.buld-bottom {
+  width: var(--bottom-width);
+  height: var(--bottom-height);
+  background-color: gray;
+  border-radius: 3px 3px 5px 5px;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+}
+.buld-bottom div {
+  width: var(--bottom-line-width);
+  height: var(--bottom-line-height);
+  background-color: rgb(81, 71, 71);
+  transform: rotateZ(-10deg);
+  border-radius: 5px;
+}
+.buld-bottom::after {
+  content: "";
+  display: block;
+  width: var(--bottom-after-size);
+  height: var(--bottom-after-size);
+  background: gray;
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translate(-50%, var(--bottom-after-size));
+  border-radius: 0 0 50% 50%;
+}

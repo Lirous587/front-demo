@@ -1,0 +1,70 @@
+:root {
+    --img-width: 150px;
+    --img-height: 202px;
+}
+
+ul {
+    width: var(--img-width);
+    margin: 100px auto;
+    position: relative;
+    transform-style: preserve-3d;
+    perspective: 1000px;
+    transition: transform 1.4s;
+}
+
+li {
+    position: absolute;
+    width: var(--img-width);
+    height: var(--img-height);
+    transform-origin: left;
+    transition: 0.5s;
+}
+
+img {
+    width: var(--img-width);
+    height: var(--img-height);
+}
+
+li:nth-child(1) {
+    z-index: 4;
+    transition: 1.6s;
+}
+
+li:nth-child(2) {
+    z-index: 3;
+    transition: 1.4s;
+}
+
+li:nth-child(3) {
+    z-index: 2;
+    transition: 1.2s;
+}
+
+li:nth-child(4) {
+    z-index: 1;
+    transition: 1s;
+}
+
+ul:hover {
+    transform: translateX(calc(var(--img-width) * 0.5 * -1));
+}
+
+ul:hover li:nth-child(1) {
+    transform: rotateY(-180deg);
+    transition: 1s;
+}
+
+ul:hover li:nth-child(2) {
+    transform: rotateY(-120deg);
+    transition: 1.2s;
+}
+
+ul:hover li:nth-child(3) {
+    transform: rotateY(-90deg);
+    transition: 1.4s;
+}
+
+ul:hover li:nth-child(4) {
+    transform: rotateY(-60deg);
+    transition: 1.6s;
+}

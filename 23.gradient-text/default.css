@@ -1,9 +1,11 @@
 body {
   background-color: #bdc3c7;
 }
+
 .gradient-text-container {
   text-align: center;
 }
+
 .gradient-text {
   text-align: center;
   margin-top: 200px;

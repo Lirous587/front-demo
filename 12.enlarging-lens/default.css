@@ -1,0 +1,35 @@
+body {
+  display: flex;
+  width: 100vw;
+  height: 100vh;
+  justify-content: center;
+}
+
+.enlarge-lens-container {
+  width: 600px;
+  margin: auto;
+  position: relative;
+  overflow: hidden;
+}
+
+.sImg img {
+  width: 100%;
+  height: auto;
+}
+
+.enlarge-lens-container .mirror {
+  width: 200px;
+  height: 200px;
+  overflow: hidden;
+  border-radius: 50%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  box-shadow: 2px 2px 5px beige;
+}
+
+.mirror img {
+  position: absolute;
+  left: 200px;
+  top: 200px;
+}

@@ -5,6 +5,7 @@ body {
   height: 100vh;
   gap: 50px;
 }
+
 .img-container {
   width: 100px;
   height: 100px;
@@ -16,15 +17,18 @@ body {
   justify-content: center;
   align-items: center;
 }
+
 .img-container img {
   width: 80px;
   height: auto;
   transition: 0.2s ease-in-out;
 }
+
 .img-container:hover {
   cursor: pointer;
   box-shadow: 10px 10px 15px black, 10px 10px 15px rgb(234, 226, 226);
 }
-.img-container:hover > img {
+
+.img-container:hover>img {
   transform: scale(0.8);
 }

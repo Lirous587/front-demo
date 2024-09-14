@@ -18,6 +18,7 @@ const startDrag = (event) => {
   // 设置初始width
   const dragOn = (event) => {
     const x = event.clientX;
+    console.log(x);
     body.style.setProperty("--aside-width", `${x}px`);
   };
 

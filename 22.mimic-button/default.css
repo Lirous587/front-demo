@@ -5,6 +5,7 @@
   --icon-vertical-height: 20px;
   --icon-vertical-width: 4px;
 }
+
 body {
   background-color: #bdc3c7;
 }
@@ -15,6 +16,7 @@ body {
   position: relative;
   margin: 300px auto;
 }
+
 input[type="checkbox"] {
   appearance: none;
   /* -webkit-appearance: none; */
@@ -54,6 +56,7 @@ input[type="checkbox"] {
   border-radius: 50%;
   clip-path: polygon(0% 0%, 50% 25%, 100% 0, 100% 100%, 0 100%);
 }
+
 .icon-container .vertical {
   background-color: #95a5a6;
   height: var(--icon-vertical-height);
@@ -69,9 +72,10 @@ input[type="checkbox"]:checked {
     inset -2px -2px 5px rgba(240, 238, 238, 0.763);
 }
 
-input[type="checkbox"]:checked ~ .icon-container .cricle {
+input[type="checkbox"]:checked~.icon-container .cricle {
   border-color: goldenrod;
 }
-input[type="checkbox"]:checked ~ .icon-container .vertical {
+
+input[type="checkbox"]:checked~.icon-container .vertical {
   background-color: goldenrod;
 }

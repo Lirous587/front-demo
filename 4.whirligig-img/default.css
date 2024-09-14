@@ -9,10 +9,12 @@ body {
   from {
     transform: rotateY(0);
   }
+
   to {
     transform: rotateY(360deg);
   }
 }
+
 .img-box {
   margin-top: 200px;
   height: 300px;
@@ -21,30 +23,38 @@ body {
   transform-style: preserve-3d;
   animation: action 20s ease-in-out infinite;
 }
+
 .img-box:hover {
   animation-play-state: paused;
 }
+
 .img-box img {
   max-width: 100%;
   max-height: 100%;
   position: absolute;
   -webkit-box-reflect: below 15px -webkit-linear-gradient(transparent 10%, rgba(40, 160, 184, 0.639));
 }
+
 .img-box :nth-child(1) {
   transform: translateZ(350px);
 }
+
 .img-box :nth-child(2) {
   transform: rotateY(60deg) translateZ(350px);
 }
+
 .img-box :nth-child(3) {
   transform: rotateY(120deg) translateZ(350px);
 }
+
 .img-box :nth-child(4) {
   transform: rotateY(180deg) translateZ(350px);
 }
+
 .img-box :nth-child(5) {
   transform: rotateY(240deg) translateZ(350px);
 }
+
 .img-box :nth-child(6) {
   transform: rotateY(300deg) translateZ(350px);
 }

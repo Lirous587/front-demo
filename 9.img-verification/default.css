@@ -1,0 +1,80 @@
+body {
+  --box-height: 200px;
+  --box-width: 400px;
+  --scroll-box-height: 50px;
+  --scroll-box-width: calc(var(--box-width) + var(--scroll-bar-width) * 6);
+  --scroll-bar-width: 50px;
+  --dynamic-move: 0px;
+  --move: clamp(0px,
+      var(--dynamic-move),
+      calc(var(--box-width) + var(--scroll-bar-width) * 5));
+}
+
+.img-box {
+  width: var(--box-width);
+  height: var(--box-height);
+  background: url("../image/18.png");
+  background-repeat: no-repeat;
+  background-size: contain;
+  position: relative;
+  margin-top: 100px;
+}
+
+.img-box::after,
+.img-box::before {
+  content: "";
+  position: absolute;
+  background: inherit;
+  height: inherit;
+  width: inherit;
+  border: solid 5px red;
+  clip-path: inset(calc(var(--box-height) / 2 - var(--scroll-box-height) / 2) calc(var(--box-width) / 2 - var(--scroll-bar-width) / 2) calc(var(--box-height) / 2 - var(--scroll-box-height) / 2) calc(var(--box-width) / 2 - var(--scroll-bar-width) / 2) round 5px);
+}
+
+.img-box::before {
+  background-color: rgba(0, 0, 0, 0.7);
+  background-blend-mode: multiply;
+}
+
+.img-box::after {
+  position: absolute;
+  right: calc(var(--scroll-bar-width) * 3 + var(--box-width) / 2 - var(--scroll-bar-width) / 2);
+  transform: translateX(var(--move));
+  transition: transform 0.5s ease-in;
+}
+
+#handel:active .img-box::after {
+  transition: none;
+}
+
+.passed::after,
+.passed::before {
+  opacity: 0;
+}
+
+.scroll-box {
+  position: relative;
+  width: var(--scroll-box-width);
+  height: var(--scroll-box-height);
+  background-color: rgb(182, 189, 196);
+  border-radius: 30px;
+  margin-top: 50px;
+  transition: 0.5s ease-in;
+}
+
+.scroll-box span {
+  content: "";
+  position: absolute;
+  display: block;
+  height: var(--scroll-box-height);
+  width: var(--scroll-bar-width);
+  background-color: rgb(0, 130, 251);
+  border-radius: 30px;
+  transform: translateX(var(--move));
+  transition: 0.5s ease-in;
+  cursor: move;
+}
+
+.scroll-box:active span {
+  transition: none;
+}

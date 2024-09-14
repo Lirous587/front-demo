@@ -1,0 +1,12 @@
+div {
+  border: solid 2px black;
+  width: 300px;
+  height: 300px;
+  float: left;
+  margin-right: 200px;
+}
+
+img {
+  width: 200px;
+  height: 200px;
+}

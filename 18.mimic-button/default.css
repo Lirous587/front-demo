@@ -3,12 +3,15 @@
   --line-width: 250px;
   --line-height: 10px;
 }
+
 body {
   background-color: #a4b0be;
 }
+
 #btn-input {
   appearance: none;
 }
+
 #btn-label {
   display: block;
   margin: 200px auto;
@@ -17,29 +20,25 @@ body {
   justify-content: center;
   align-items: center;
 }
+
 .slide {
   width: var(--slide-size);
   height: var(--slide-size);
-  background: linear-gradient(
-    to bottom,
-    rgb(244, 241, 241),
-    rgba(223, 215, 215)
-  );
+  background: linear-gradient(to bottom,
+      rgb(244, 241, 241),
+      rgba(223, 215, 215));
   border-radius: 5px;
   transition: transform 0.5s ease-in-out;
   z-index: 10;
   position: relative;
-  box-shadow: inset calc(var(--slide-size) * 0.2) calc(var(--slide-size) * 0.2)
-      10px rgba(255, 255, 255, 0.5),
-    inset calc(var(--slide-size) * 0.3) calc(var(--slide-size) * 0.3) 15px
-      rgba(255, 255, 255, 0.3),
-    inset calc(var(--slide-size) * -0.2) calc(var(--slide-size) * -0.2) 20px
-      rgba(255, 255, 255, 0.2),
-    inset calc(var(--slide-size) * -0.3) calc(var(--slide-size) * -0.3) 20px
-      rgba(255, 255, 255, 0.3),
+  box-shadow: inset calc(var(--slide-size) * 0.2) calc(var(--slide-size) * 0.2) 10px rgba(255, 255, 255, 0.5),
+    inset calc(var(--slide-size) * 0.3) calc(var(--slide-size) * 0.3) 15px rgba(255, 255, 255, 0.3),
+    inset calc(var(--slide-size) * -0.2) calc(var(--slide-size) * -0.2) 20px rgba(255, 255, 255, 0.2),
+    inset calc(var(--slide-size) * -0.3) calc(var(--slide-size) * -0.3) 20px rgba(255, 255, 255, 0.3),
     F 10px 10px 5px rgba(0, 0, 0, 0.1), 20px 20px 10px rgba(0, 0, 0, 0.1);
   perspective: none;
 }
+
 .slide::before {
   content: "";
   display: block;
@@ -51,6 +50,7 @@ body {
   background-color: #ffffff;
   filter: blur(1px);
 }
+
 .slide::after {
   content: "";
   display: block;
@@ -73,6 +73,7 @@ body {
   left: 50%;
   transform: translateX(-50%) translateY(-50%);
 }
+
 .icon {
   position: absolute;
   color: red;
@@ -80,28 +81,29 @@ body {
   left: 50%;
   transform: translateX(-50%) translateY(-50%);
 }
+
 .icon::before,
 .icon::after {
   content: "";
   display: block;
   transition: 0.5s ease;
 }
+
 .icon::before {
   width: calc(var(--slide-size) * 0.25);
   height: calc(var(--slide-size) * 0.25);
   border: solid 8px #747d8c;
   border-radius: 50%;
-  clip-path: polygon(
-    50% 50%,
-    65% 0%,
-    100% 0%,
-    100% 100%,
-    0% 100%,
-    0% 0%,
-    35% 0%
-  );
+  clip-path: polygon(50% 50%,
+      65% 0%,
+      100% 0%,
+      100% 100%,
+      0% 100%,
+      0% 0%,
+      35% 0%);
   transition: 2s;
 }
+
 .icon::after {
   position: absolute;
   width: 8px;
@@ -111,35 +113,36 @@ body {
   left: 50%;
   transform: translateX(-50%);
 }
+
 .shadow {
   position: absolute;
   width: calc(var(--slide-size) * 1.4);
   height: calc(var(--slide-size) * 3);
   left: 0;
   top: var(--slide-size);
-  background: linear-gradient(
-    to bottom,
-    transparent,
-    rgba(68, 67, 67, 0.269) calc(var(--slide-size) * 0.7),
-    rgba(68, 67, 67, 0.269),
-    transparent
-  );
+  background: linear-gradient(to bottom,
+      transparent,
+      rgba(68, 67, 67, 0.269) calc(var(--slide-size) * 0.7),
+      rgba(68, 67, 67, 0.269),
+      transparent);
   transform-origin: top left;
   transform: rotateZ(-45deg);
   z-index: -100;
   pointer-events: none;
 }
 
-#btn-input:checked + label .slide {
+#btn-input:checked+label .slide {
   transform: translateX(80px);
 }
-#btn-input:not(:checked) + label .slide {
+
+#btn-input:not(:checked)+label .slide {
   transform: translateX(-80px);
 }
 
-#btn-input:checked + label .icon::before {
+#btn-input:checked+label .icon::before {
   border-color: #ffa502;
 }
-#btn-input:checked + label .icon::after {
+
+#btn-input:checked+label .icon::after {
   background: #ffa502;
 }

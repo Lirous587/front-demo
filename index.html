@@ -53,3 +53,11 @@
     padding: 5px;
   }
 </style>
+
+<script>
+  const a_list = document.querySelectorAll("a");
+  for (let index = 0; index < a_list.length; index++) {
+    const a = a_list[index];
+    a.target = "_blank";
+  }
+</script>

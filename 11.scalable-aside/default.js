@@ -14,19 +14,18 @@ const init = async () => {
 
 init();
 
-const startDrag = (event) => {
+const startDrag = () => {
   // 设置初始width
-  const dragOn = (event) => {
-    const x = event.clientX;
-    console.log(x);
+  const dragOn = (e) => {
+    const x = e.clientX;
     body.style.setProperty("--aside-width", `${x}px`);
   };
 
-  body.addEventListener("mouseover", dragOn);
+  document.documentElement.addEventListener("mousemove", dragOn);
 
-  body.addEventListener("mouseup", (event) => {
+  document.documentElement.addEventListener("mouseup", (event) => {
     localStorage.setItem("bar_w", event.clientX);
-    body.removeEventListener("mouseover", dragOn);
+    document.documentElement.removeEventListener("mousemove", dragOn);
   });
 };
 

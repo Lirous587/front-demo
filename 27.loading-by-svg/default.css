@@ -1,0 +1,19 @@
+.osvg {
+    position: absolute;
+    inset: 0;
+    margin: auto;
+    /* transform: rotateZ(-90deg); */
+}
+
+.osvg-round {
+    stroke-width: 10px;
+    fill: transparent;
+    stroke: gray;
+    stroke-dasharray: calc(100px * 3.15 * 2);
+    stroke-dashoffset: 630px;
+}
+
+.osvg-text {
+    text-anchor: middle;
+    alignment-baseline: middle;
+}

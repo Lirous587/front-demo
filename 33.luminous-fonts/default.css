@@ -1,0 +1,29 @@
+body {
+    background-color: #000;
+}
+
+div {
+    width: 300px;
+    height: 300px;
+    margin: 100px auto;
+    font-size: 2em;
+    color: white;
+
+    animation: text-brighten 2s infinite;
+}
+
+@keyframes text-brighten {
+    0% {
+        text-shadow: 0 0 10px yellowgreen, 0 0 20px yellowgreen,
+            0 0 30px yellowgreen;
+    }
+
+    50% {
+        text-shadow: 0 0 10px blue, 0 0 20px blue, 0 0 30px blue, 0 0 40px blue;
+    }
+
+    100% {
+        text-shadow: 0 0 10px yellowgreen, 0 0 20px yellowgreen,
+            0 0 30px yellowgreen;
+    }
+}

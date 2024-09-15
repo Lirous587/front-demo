@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="stylesheet" href="./default.css" />
+    <link rel="stylesheet" href="../common.css" />
+    <title>包含块</title>
+  </head>
+  <body>
+    <div class="fa">
+      <div class="son">
+        <div class="s_son"></div>
+      </div>
+    </div>
+
+    <p>黑色是父亲,红色是孩子,黄色是孙子,没有修改元素定位,依次为包含块的50%</p>
+
+    <div class="fa_1">
+      <div class="son_1">
+        <div class="s_son_1"></div>
+      </div>
+    </div>
+    <p>黑色300px(border-box模型)</p>
+    <p>
+      黑色是父亲(使用相对定位,内边距为50px),红色是孩子,黄色是孙子(使用绝对定位,包含块为黑色),孩子为父亲的一半
+    </p>
+
+    <div style="margin: 10px 0">
+      <p>计算可知黄色大小为包含块的内边距的百分之50%,为150px</p>
+      <p>300*0.5=150</p>
+    </div>
+    <div>
+      <p>计算可知红色大小为黑色内容区域的百分之60%,为120px</p>
+      <p>(300-100)*0.5=120</p>
+    </div>
+  </body>
+</html>

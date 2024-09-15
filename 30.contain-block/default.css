@@ -1,0 +1,49 @@
+body {
+    height: 600px;
+    width: 600px;
+    padding: 50px;
+    box-sizing: content-box;
+}
+
+.fa {
+    height: 50%;
+    width: 50%;
+    background: #000;
+    position: relative;
+}
+
+.son {
+    height: 50%;
+    width: 50%;
+    background: red;
+}
+
+.s_son {
+    height: 50%;
+    width: 50%;
+    background: yellow;
+}
+
+.fa_1 {
+    height: 50%;
+    width: 50%;
+    background: #000;
+    position: relative;
+    margin-top: 100px;
+    padding: 50px;
+    z-index: -2;
+}
+
+.son_1 {
+    height: 60%;
+    width: 60%;
+    background: red;
+}
+
+.s_son_1 {
+    height: 50%;
+    width: 50%;
+    background: yellow;
+    position: absolute;
+    z-index: -1;
+}

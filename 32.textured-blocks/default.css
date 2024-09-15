@@ -1,0 +1,14 @@
+body {
+    background-color: pink;
+}
+
+div {
+    height: 300px;
+    width: 300px;
+    margin: 100px auto;
+    background-color: rgb(226, 221, 221);
+    border-radius: 50px;
+    box-shadow: 20px 20px 20px -15px black, inset 10px 10px 10px white,
+        inset -3px -3px 5px rgba(20, 19, 19, 0.737),
+        -10px -10px 20px rgb(235, 234, 234);
+}

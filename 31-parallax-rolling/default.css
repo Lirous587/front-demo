@@ -1,0 +1,42 @@
+html {
+    scroll-behavior: smooth;
+}
+
+section {
+    height: 100vh;
+    background-size: cover;
+    background-attachment: fixed;
+    position: relative;
+}
+
+section p {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 1.5em;
+    color: transparent;
+    background: radial-gradient(white, red, blue);
+    background-clip: text;
+    text-shadow: 2px 2px 2px white;
+}
+
+section:nth-child(1) {
+    background-image: url("../image/2.png");
+}
+
+section:nth-child(2) {
+    background-image: url("../image/4.png");
+}
+
+section:nth-child(3) {
+    background-image: url("../image/6.png");
+}
+
+section:nth-child(4) {
+    background-image: url("../image/8.png");
+}
+
+section:nth-child(5) {
+    background-image: url("../image/12.png");
+}

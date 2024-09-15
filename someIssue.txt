@@ -74,3 +74,13 @@ img为inline-block 存在幽灵节点
 
     3.设置行高 将父元素的行高设置为 0
 推荐使用方法一 使用方法三会容易导致混乱
+
+
+13.关于包含块
+对于定位为static或relative的元素包含块是指父级元素
+其余定位的包含块则是指position为非static的父级元素
+对于定位为static或relative的元素 元素的宽高为其包含块的内容比例
+如果使用定位为非static或非relative 则子元素的宽高为其包含块的内边距比例
+
+14.z-index
+z-index只能在position属性值为非static的元素生效

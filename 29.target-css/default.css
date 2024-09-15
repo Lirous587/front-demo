@@ -1,0 +1,36 @@
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 100px;
+}
+
+#content {
+    margin: auto;
+    width: 100px;
+    height: 100px;
+    background-color: rebeccapurple;
+    display: none;
+    transition: 0.5s;
+}
+
+a {
+    text-decoration: none;
+    width: 100px;
+    text-align: center;
+    background-color: gray;
+    color: white;
+}
+
+#hide {
+    display: none;
+}
+
+#content:target,
+#content:target~#hide {
+    display: block;
+}
+
+#content:target~#show {
+    display: none;
+}

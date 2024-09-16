@@ -1,0 +1,59 @@
+:root {
+    --img-width: 480px;
+    --img-height: 270px;
+    --img-sum: 6;
+    --img-gap: 10px;
+    --img-border-radius: 40px;
+}
+
+.container {
+    position: relative;
+    width: var(--img-width);
+    height: var(--img-height);
+    overflow: hidden;
+    margin: 100px auto;
+    border-radius: var(--img-border-radius);
+}
+
+.main {
+    display: flex;
+    gap: var(--img-gap);
+    position: absolute;
+    left: 0;
+}
+
+.main img {
+    width: var(--img-width);
+    height: var(--img-height);
+    border-radius: var(--img-border-radius);
+}
+
+.btn {
+    position: absolute;
+    width: var(--img-width);
+    height: var(--img-height);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.btn div {
+    width: calc(var(--img-width) / 6);
+    height: calc(var(--img-width) / 6);
+    color: white;
+    border-radius: 50%;
+    text-align: center;
+    font-size: 3em;
+    line-height: calc(var(--img-width) / 6);
+    opacity: 0;
+}
+
+.btn div:nth-child(1):hover {
+    opacity: 1;
+    cursor: pointer;
+}
+
+.btn div:nth-child(2):hover {
+    opacity: 1;
+    cursor: pointer;
+}

@@ -81,6 +81,3 @@ img为inline-block 存在幽灵节点
 其余定位的包含块则是指position为非static的父级元素
 对于定位为static或relative的元素 元素的宽高为其包含块的内容比例
 如果使用定位为非static或非relative 则子元素的宽高为其包含块的内边距比例
-
-14.z-index
-z-index只能在position属性值为非static的元素生效

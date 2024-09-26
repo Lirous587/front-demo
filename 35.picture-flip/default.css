@@ -1,0 +1,26 @@
+div {
+    width: 400px;
+    height: 600px;
+    position: relative;
+    margin: 100px auto;
+    transform-style: preserve-3d;
+    perspective: 1000px;
+  }
+  div img {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    backface-visibility: hidden;
+    transition: 1s;
+    box-shadow: 0 0 3px 5px black;
+    border-radius: 5px;
+  }
+  div img:nth-child(2) {
+    transform: rotateY(-180deg);
+  }
+  div:hover img:nth-child(1) {
+    transform: rotateY(-180deg);
+  }
+  div:hover img:nth-child(2) {
+    transform: rotateY(-360deg);
+  }
